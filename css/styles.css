@@ -1,0 +1,25 @@
+#mainheader {
+	background-color: cadetblue;
+}
+
+#mainbody {
+	background-color: red;
+}
+
+#mainfooter {
+	background-color: purple;
+}
+
+.day {
+	width: 100%;
+}
+
+.dayColumn {
+	float: left;
+	width: 16%;
+}
+
+.timeColumn {
+	float: left;
+	width: 4%;
+}
