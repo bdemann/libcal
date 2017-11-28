@@ -1,0 +1,18 @@
+{
+  "name": "libcal",
+  "homepage": "https://github.com/bdemann/libcal",
+  "authors": [
+    "Benjamin DeMann <benjamin.demann@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
