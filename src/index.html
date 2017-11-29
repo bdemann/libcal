@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/google-calendar/google-calendar.html">
+  <link rel="import" href="components/lc-app/lc-app.html">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -28,10 +31,15 @@
 
 </head>
 <body>
+	<google-calendar></google-calendar>
+	<lc-app></lc-app>
 	<div id='mainwrapper' class="container">
 		<div class="row" id='mainheader'>
 			<div class="nine columns"><h1>2018 Winter Semester</h1></div>
-			<div class='three columns'><button>Add</button></div>
+			<div class='three columns'>
+				<button>Add</button>
+				<paper-button raised>Hello There</paper-button>
+			</div>
 		</div>
 		<div class="row" id='mainbody'>
 			<div class="two columns">

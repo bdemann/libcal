@@ -1,0 +1,23 @@
+{
+  "name": "libcal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bdemann/libcal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdemann/libcal/issues"
+  },
+  "homepage": "https://github.com/bdemann/libcal#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "zwitterion": "^0.17.0"
+  }
+}
