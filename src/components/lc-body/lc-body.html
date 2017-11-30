@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../lc-calendar-column/lc-calendar-column.html">
 <!-- <link rel="import" href="bower_components/paper-button/paper-button.html"> -->
 <!-- <link rel="stylesheet" href="../../css/normalize.css">
 <link rel="stylesheet" href="../../css/skeleton.css">
@@ -6,7 +7,20 @@
 
 <dom-module id="lc-body">
 	<template>
-		<h2>Hello from body</h2>
+		<style>
+		#testid {
+			color: blue;
+		}
+		</style>
+		<lc-calendar>
+			<lc-calendar-column>Monday</lc-calendar-column>
+			<lc-calendar-column>Tuesday</lc-calendar-column>
+			<lc-calendar-column>Wednesday</lc-calendar-column>
+			<lc-calendar-column>Thursday</lc-calendar-column>
+			<lc-calendar-column>Friday</lc-calendar-column>
+			<lc-calendar-column>Saturday</lc-calendar-column>
+		</lc-calendar>
+		<h2 id="testid">Hello from body</h2>
 		<div id='mainwrapper' class="container">
 			<div class="row" id='mainbody'>
 				<div class="two columns">
@@ -23,12 +37,12 @@
 					<div class='timeColumn'>
 						<table class='day'>
 							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
+							<tr><td>8:00</td></tr>
+							<tr><td>9:00</td></tr>
+							<tr><td>10:00</td></tr>
+							<tr><td>12:00</td></tr>
+							<tr><td>1:00</td></tr>
+							<tr><td>2:00</td></tr>
 							<tr><td>7:00</td></tr>
 							<tr><td>7:00</td></tr>
 							<tr><td>7:00</td></tr>
