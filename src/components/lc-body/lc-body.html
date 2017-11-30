@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../lc-calendar-column/lc-calendar-column.html">
+<link rel="import" href="../lc-calendar-time-bar/lc-calendar-time-bar.html">
 <!-- <link rel="import" href="bower_components/paper-button/paper-button.html"> -->
 <!-- <link rel="stylesheet" href="../../css/normalize.css">
 <link rel="stylesheet" href="../../css/skeleton.css">
@@ -11,59 +12,20 @@
 		#testid {
 			color: blue;
 		}
+		#calendar {
+			display: grid;
+			grid-template-columns: 4% repeat(6, 15%);
+			grid-template-rows: 100%;
+		}
 		</style>
-		<lc-calendar>
-			<lc-calendar-column>Monday</lc-calendar-column>
-			<lc-calendar-column>Tuesday</lc-calendar-column>
-			<lc-calendar-column>Wednesday</lc-calendar-column>
-			<lc-calendar-column>Thursday</lc-calendar-column>
-			<lc-calendar-column>Friday</lc-calendar-column>
-			<lc-calendar-column>Saturday</lc-calendar-column>
-		</lc-calendar>
-		<h2 id="testid">Hello from body</h2>
-		<div id='mainwrapper' class="container">
-			<div class="row" id='mainbody'>
-				<div class="two columns">
-					<button>Class</button>
-					<br>
-					<button>Other</button>
-					<br>
-					<button>P1</button>
-					<br>
-					<button>P2</button>
-					<br>
-				</div>
-				<div class='ten columns'>
-					<div class='timeColumn'>
-						<table class='day'>
-							<tr><td>7:00</td></tr>
-							<tr><td>8:00</td></tr>
-							<tr><td>9:00</td></tr>
-							<tr><td>10:00</td></tr>
-							<tr><td>12:00</td></tr>
-							<tr><td>1:00</td></tr>
-							<tr><td>2:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-							<tr><td>7:00</td></tr>
-						</table>
-					</div>
-					<div class="dayColumn">Monday
-					</div>
-					<div class="dayColumn">Tuesday</div>
-					<div class="dayColumn">Wednesday</div>
-					<div class="dayColumn">Thursday</div>
-					<div class="dayColumn">Friday</div>
-					<div class="dayColumn">Saturday</div>
-				</div>
-			</div>
+		<div id="calendar">
+			<lc-calendar-time-bar></lc-calendar-time-bar>
+			<lc-calendar-column id="monday" on-click="addTime">Monday</lc-calendar-column>
+			<lc-calendar-column id="tuesday" on-click="addTime">Tuesday</lc-calendar-column>
+			<lc-calendar-column id="wednesday" on-click="addTime">Wednesday</lc-calendar-column>
+			<lc-calendar-column id="thrusday" on-click="addTime">Thursday</lc-calendar-column>
+			<lc-calendar-column id="friday" on-click="addTime">Friday</lc-calendar-column>
+			<lc-calendar-column id="saturday" on-click="addTime">Saturday</lc-calendar-column>
 		</div>
 	</template>
 	<script src="lc-body.ts"></script>

@@ -1,36 +1,32 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
-<link rel ="stylesheet" href="ic-header.css">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
 
 <dom-module id="lc-header">
-	<script type="text/JavaScript">
-function popup () {
-    alert ("Not Yet Implemented");
-    }
-</script>
 	<template>
-		<style>
-			paper-button  {
-			    float: right;
-			}
-			#mainheader  {
-			    /*background-color: lightblue;*/
-					float: left;
-					font-family: sans-serif;
+		<style include="https://fonts.googleapis.com/css?family=Philosopher">
+			#header  {
+				/*background-color: lightblue;*/
+				font-family: sans-serif;
+				display: grid;
+				grid-template-columns: 50% 1fr 25%;
+				margin-bottom: 25px;
 			}
 			#edit_s_button{
 				font-family: sans-serif;
-			}
-
-			.clear{
-				clear: both;
+				grid-column-start: 3;
 			}
 		</style>
-		<div class="row" id='mainheader'>
-			<h1>2018 Winter Semester</h1></div>
-			<paper-button raised onclick="popup()" id='edit_s_button'> Edit Your Schedule</paper-button>
-			</div>
-			<br class="clear">
+		<div id='header'>
+			<paper-dropdown-menu on-value-changed="changeSemester">
+				<paper-listbox slot="dropdown-content" selected="0">
+					<paper-item>2018 Winter Semester</paper-item>
+					<paper-item>2018 Fall Semester</paper-item>
+				</paper-listbox>
+			</paper-dropdown-menu >
+			<paper-button raised on-click="editSchedule" id='edit_s_button'> Edit Your Schedule</paper-button>
 		</div>
 	</template>
 	<script src="lc-header.ts"></script>
