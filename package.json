@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install && cd src && npm install",
     "start": "cd src && node_modules/.bin/zwitterion --watch-files --target ES6",
-    "build": "cd src && node_modules/.bin/zwitterion --build-static"
+    "build": "cd src && node_modules/.bin/zwitterion --build-static --target ES6"
   },
   "repository": {
     "type": "git",
