@@ -13,19 +13,30 @@
 			color: blue;
 		}
 		#calendar {
+			font-family: Roboto;
+			width: 95%;
+			max-width: 1080px;
+			margin: 0 auto;
 			display: grid;
-			grid-template-columns: 4% repeat(6, 15%);
+			grid-template-columns: 5% repeat(6, 1fr);
 			grid-template-rows: 100%;
+			background: #fff;
+			padding: 20px;
+		}
+		#calContainer {
+			background: #f5f5f5;
 		}
 		</style>
-		<div id="calendar">
-			<lc-calendar-time-bar></lc-calendar-time-bar>
-			<lc-calendar-column id="monday" on-click="addTime">Monday</lc-calendar-column>
-			<lc-calendar-column id="tuesday" on-click="addTime">Tuesday</lc-calendar-column>
-			<lc-calendar-column id="wednesday" on-click="addTime">Wednesday</lc-calendar-column>
-			<lc-calendar-column id="thrusday" on-click="addTime">Thursday</lc-calendar-column>
-			<lc-calendar-column id="friday" on-click="addTime">Friday</lc-calendar-column>
-			<lc-calendar-column id="saturday" on-click="addTime">Saturday</lc-calendar-column>
+		<div id="calContainer">
+			<div id="calendar">
+				<lc-calendar-time-bar></lc-calendar-time-bar>
+				<lc-calendar-column id="monday" on-click="addTime">Monday</lc-calendar-column>
+				<lc-calendar-column id="tuesday" on-click="addTime">Tuesday</lc-calendar-column>
+				<lc-calendar-column id="wednesday" on-click="addTime">Wednesday</lc-calendar-column>
+				<lc-calendar-column id="thrusday" on-click="addTime">Thursday</lc-calendar-column>
+				<lc-calendar-column id="friday" on-click="addTime">Friday</lc-calendar-column>
+				<lc-calendar-column id="saturday" on-click="addTime">Saturday</lc-calendar-column>
+			</div>
 		</div>
 	</template>
 	<script src="lc-body.ts"></script>

@@ -19,6 +19,7 @@
     "paper-button": "^2.0.0",
     "paper-dropdown-menu": "^2.0.0",
     "paper-item": "^2.0.0",
-    "paper-listbox": "^2.0.0"
+    "paper-listbox": "^2.0.0",
+    "app-layout": "PolymerElements/app-layout#^2.0.4"
   }
 }
