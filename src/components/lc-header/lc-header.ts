@@ -3,10 +3,13 @@ class LCHeader extends Polymer.Element {
 		return 'lc-header';
 	}
 	editSchedule () {
-		alert ("Edit Schedule Not Yet Implemented");
+		console.log ("Edit Schedule Not Yet Implemented");
+		var event = new CustomEvent('scheduleEdit', { detail: this.dataset.time });
+		this.dispatchEvent(event);
+		console.log('we finished with no problems')
 	}
 	changeSemester () {
-		console.log ("Changing Semesters Not Yet Implemented");
+		console.log ('Changing Semesters Not Yet Implemented');
 	}
 }
 

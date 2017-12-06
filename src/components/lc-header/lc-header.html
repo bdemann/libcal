@@ -4,6 +4,9 @@
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
 
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
 <dom-module id="lc-header">
 	<template>
 		<style>
@@ -11,13 +14,13 @@
 				/*background-color: lightblue;*/
 				font-family: sans-serif;
 				display: grid;
-				grid-template-columns: 100px 4fr 3fr 2fr;
+				grid-template-columns: 100px 4fr 3fr 1fr 2fr;
 				background: #4AC0FF;
 				padding: 5px;
 			}
 			#edit_s_button {
 				font-family: sans-serif;
-				grid-column-start: 4;
+				grid-column-start: 5;
 				background: #FF9B19;
 			}
 			#logo {
@@ -25,7 +28,15 @@
 				justify-content: center;
 			}
 		</style>
-
+			<!-- <app-header>
+				<app-toolbar class="toolbar">
+				  <div class="tabs">
+					<a href="#about">About</a>
+					<a href="#services">Services</a>
+					<a href="#contact">Contact</a>
+				  </div>
+				</app-toolbar>
+			</app-header> -->
 		<div id='headerTest'>
 			<div></div>
 			<div id="logo"><b>Library Schedule Manager</b><span> The Scheduler of the Future</span></div>
