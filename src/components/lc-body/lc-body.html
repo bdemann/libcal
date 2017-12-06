@@ -1,6 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../lc-calendar-column/lc-calendar-column.html">
 <link rel="import" href="../lc-calendar-time-bar/lc-calendar-time-bar.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/notification-icons.html">
 <!-- <link rel="import" href="bower_components/paper-button/paper-button.html"> -->
 <!-- <link rel="stylesheet" href="../../css/normalize.css">
 <link rel="stylesheet" href="../../css/skeleton.css">
@@ -26,8 +29,25 @@
 		#calContainer {
 			background: #f5f5f5;
 		}
+		#iconTray {
+			padding: 15px;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+		}
+		.calIcon {
+			text-align: center;
+		}
+		#p1 {
+			grid-column-start: 2;
+		}
 		</style>
 		<div id="calContainer">
+			<div id="iconTray">
+				<div id="p1" class="calIcon" on-click="setMode"><iron-icon icon="icons:work"></iron-icon></br>Preferred</div>
+				<div id="p2" class="calIcon" on-click="setMode"><iron-icon icon="icons:weekend"></iron-icon></br>Not Preferred</div>
+				<div id="course" class="calIcon" on-click="setMode"><iron-icon icon="maps:store-mall-directory"></iron-icon></br>Class</div>
+				<div id="other" class="calIcon" on-click="setMode"><iron-icon icon="notification:do-not-disturb"></iron-icon></br>Unavailable</div>
+			</div>
 			<div id="calendar">
 				<lc-calendar-time-bar></lc-calendar-time-bar>
 				<lc-calendar-column id="monday" on-click="addTime">Monday</lc-calendar-column>

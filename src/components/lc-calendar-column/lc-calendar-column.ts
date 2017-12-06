@@ -4,22 +4,29 @@ class LCCalendarColumn extends Polymer.Element {
 	constructor () {
 		super();
 		console.log('we created a calender column');
-		console.log(document)
+		console.log(document);
+		this.attachShadow({mode: 'open'});
 	}
 
 	connectedCallback() {
-		console.log('Here is the connected Callback');
-		var blocks = document.getElementsByClassName('block');
-		var i;
-		for (i = 0; i < blocks.length; i++){
-			blocks[i].innerHTML = 'Hello World';
-				// <div class="job deskone">Mike</div>
-				// <div class="job desktwo">Sam</div>
-				// <div class="job equip">Brennan</div>
-		}
-		// console.log(i);
-		// console.log(document.getElementById('calContainer'));
-		// console.log(document);
+		setTimeout(()=> {
+			console.log('Here is the connected Callback');
+			console.log(this.shadowRoot);
+			const blocks = this.shadowRoot.querySelectorAll('.block');
+			 // document.getElementsByClassName('block');
+			// console.log(this);
+
+			console.log(blocks);
+			var i;
+			for (i = 0; i < blocks.length; i++){
+				// blocks[i].innerHTML = `<div class="job deskone">Mike</div>
+				// 	<div class="job desktwo">Sam</div>
+				// 	<div class="job equip">Brennan</div>`
+			}
+			console.log(i);
+			// console.log(document.getElementById('calContainer'));
+			// console.log(document);
+		});
 	}
 
 	report () {
