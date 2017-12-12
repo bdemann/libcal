@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/bdemann/libcal/issues"
   },
-  "homepage": "https://github.com/bdemann/libcal#readme"
+  "homepage": "https://github.com/bdemann/libcal#readme",
+  "dependencies": {
+    "bower": "^1.8.2"
+  }
 }

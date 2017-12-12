@@ -33,13 +33,13 @@ class LCBody extends Polymer.Element {
 			icons[i].style.color = 'black';
 		}
 		if (button == 'p1') {
-			this.color = 'green';
+			this.color = '#899348';
 		} else if (button == 'p2'){
-			this.color = 'blue'
+			this.color = '#ffc74f'
 		} else if (button == 'course') {
-			this.color = 'orange'
+			this.color = '#4286f4'
 		} else if (button == 'other') {
-			this.color = 'firebrick'
+			this.color = '#fc5358'
 		}
 		this.shadowRoot.querySelector('#' + button).style.color = this.color;
 	}
