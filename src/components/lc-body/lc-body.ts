@@ -3,7 +3,7 @@ class LCBody extends Polymer.Element {
 
 	constructor() {
 		super();
-		this.color = 'green';
+		this.color = '#A9C66D';
 		this.attachShadow({mode: 'open'});
 	}
 
@@ -33,7 +33,7 @@ class LCBody extends Polymer.Element {
 			icons[i].style.color = 'black';
 		}
 		if (button == 'p1') {
-			this.color = '#899348';
+			this.color = '#A9C66D';
 		} else if (button == 'p2'){
 			this.color = '#ffc74f'
 		} else if (button == 'course') {
