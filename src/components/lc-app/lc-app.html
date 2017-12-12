@@ -2,16 +2,47 @@
 <link rel="import" href="../lc-header/lc-header.html">
 <link rel="import" href="../lc-body/lc-body.html">
 <link rel="import" href="../lc-footer/lc-footer.html">
+<link rel="import" href="../lc-login/lc-login.html">
+<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
+<!-- <link rel="import" href="../lc-login/lc-login.html"> -->
 
 <dom-module id="lc-app">
 	<template>
 		<style>
-
+		#app {
+			display: none;
+		}
+		#loading {
+			background-color: white;
+			opacity: 0.5;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: 1fr 25px 1fr;
+			grid-template-rows: 1fr 25px 1fr;
+			visibility: hidden;
+		}
+		#spinner {
+			grid-column-start: 2;
+			grid-row-start: 2;
+			opacity: 1;
+		}
 		</style>
-		<lc-header on-edit-schedule=""></lc-header>
-		<lc-body></lc-body>
-		<lc-entry><lc-entry>
-		<lc-footer></lc-footer>
+		<div id="login" on-click="login">
+			<lc-login></lc-login>
+		</div>
+		<div id="loading">
+			<paper-spinner active id="spinner">...</paper-spinner>
+		</div>
+		<div id="app">
+			<lc-header on-edit-schedule=""></lc-header>
+			<lc-body></lc-body>
+			<lc-entry><lc-entry>
+			<lc-footer></lc-footer>
+		</div>
 	</template>
 	<script src="lc-app.ts"></script>
 </dom-module>

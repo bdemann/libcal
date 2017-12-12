@@ -9,7 +9,7 @@ class LCBody extends Polymer.Element {
 
 	connectedCallback () {
 		setTimeout(()=> {
-			this.shadowRoot.querySelector('#p1').style.color = this.color;
+			this.shadowRoot.querySelector('#p1').style.backgroundColor = this.color;
 		});
 	}
 
@@ -22,26 +22,39 @@ class LCBody extends Polymer.Element {
 		console.log(event.path[0]);
 		console.log(event);
 		console.dir(event);
-		event.path[0].style.background = this.color;
+		console.log("this is the class of the clicked thing");
+		console.log(cell.className)
+		if(cell.className.includes('block')){
+			event.path[0].style.background = this.color;
+		}
 	}
 
 	setMode (event) {
-		const button = event.path[0].id;
 		const icons = this.shadowRoot.querySelectorAll('.calIcon');
 		var i = 0;
 		for(i = 0; i < icons.length; i++){
-			icons[i].style.color = 'black';
+			icons[i].style.backgroundColor = 'white';
 		}
-		if (button == 'p1') {
-			this.color = '#A9C66D';
-		} else if (button == 'p2'){
-			this.color = '#ffc74f'
-		} else if (button == 'course') {
-			this.color = '#4286f4'
-		} else if (button == 'other') {
-			this.color = '#fc5358'
+		var hitButton = false;
+		i = 0;
+		while (!hitButton){
+			var button = event.path[i].id;
+			if (button == 'p1') {
+				this.color = '#A9C66D';
+			} else if (button == 'p2'){
+				this.color = '#ffc74f';
+			} else if (button == 'course') {
+				this.color = '#4286f4';
+			} else if (button == 'other') {
+				this.color = '#fc5358';
+			} else {
+				i++;
+				hitButton = false;
+				continue;
+			}
+			hitButton = true;
 		}
-		this.shadowRoot.querySelector('#' + button).style.color = this.color;
+		this.shadowRoot.querySelector('#' + button).style.backgroundColor = this.color;
 	}
 }
 

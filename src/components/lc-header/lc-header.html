@@ -17,15 +17,21 @@
 				grid-template-columns: 100px 4fr 3fr 1fr 2fr;
 				background: #4AC0FF;
 				padding: 5px;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+				position: relative;
+				z-index: 10;
 			}
 			#edit_s_button {
-				font-family: sans-serif;
+				font-family: Roboto;
 				grid-column-start: 5;
 				background: #FF9B19;
 			}
-			#logo {
+			#logoWrapper {
 				padding: 22.5px;
 				justify-content: center;
+			}
+			#logo {
+				font-size: 18px;
 			}
 		</style>
 			<!-- <app-header>
@@ -39,7 +45,7 @@
 			</app-header> -->
 		<div id='headerTest'>
 			<div></div>
-			<div id="logo"><b>Library Schedule Manager</b><span> The Scheduler of the Future</span></div>
+			<div id="logoWrapper"><span id="logo"><b>Library Schedule Manager</b></span><span id="tagline"> Have a say in when you work!</span></div>
 			<paper-dropdown-menu on-value-changed="changeSemester" label="Semester">
 				<paper-listbox slot="dropdown-content" selected="0">
 					<paper-item>2018 Winter</paper-item>

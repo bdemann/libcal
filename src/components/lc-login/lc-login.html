@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="lc-login">
+	<template>
+		<style>
+			#loginScreen {
+				display: grid;
+				grid-template-columns: 1fr 400px 1fr;
+				grid-template-rows: 1fr 500px 1fr;
+				background-image: url("../../images/library.jpg");
+				background-size: 100% auto;
+				background-position: center;
+				background-blend-mode: lighten;
+				height: 100%;
+			}
+			#loginBox {
+				background-color: white;
+				grid-column-start: 2;
+				grid-row-start: 2;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+				border-radius: 2px;
+				display: grid;
+				grid-template-columns: 20px 1fr 20px;
+				grid-template-rows: 20px repeat(6, 1fr) 20px;
+			}
+			#logo {
+				grid-column-start: 2;
+				grid-row-start: 2;
+				font-weight: 300;
+			}
+			#tagline {
+				grid-column-start: 2;
+				grid-row-start: 3;
+				font-weight: 400;
+			}
+			#netidInput {
+				grid-column-start: 2;
+				grid-row-start: 4;
+			}
+			#passwordInput {
+				grid-column-start: 2;
+				grid-row-start: 5;
+			}
+			#loginButton {
+				grid-column-start: 2;
+				grid-row-start: 7;
+				font-family: Roboto;
+				background: #FF9B19;
+				width:100%;
+			}
+		</style>
+		<div id="loginScreen">
+			<div id="loginBox">
+				<h1 id="logo">Library Schedule Manager </h1>
+				<h3 id="tagline">Have a say in when you work!</h3>
+				<paper-input id="netidInput" label="Net ID"></paper-input>
+				<paper-input id="passwordInput" label="Password"></paper-input>
+				<paper-button id="loginButton" raised on-click="login">Login</paper-button>
+			</div>
+		</div>
+	</template>
+	<script src="lc-login.ts"></script>
+</dom-module>
