@@ -17,7 +17,7 @@ class LCBody extends Polymer.Element {
 		// TODO At this point we need to figure out what day was clicked and where it was clicked. How do we do that?
 		// alert ("Adding Time not Implemented");
 
-		let cell = event.path[0];
+		const cell = event.path[0];
 
 		console.log(event.path[0]);
 		console.log(event);
