@@ -6,6 +6,20 @@
 <link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
 <!-- <link rel="import" href="../lc-login/lc-login.html"> -->
 
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBL4OkhYODzTJmiTzez1b_0owogmdVBazQ",
+    authDomain: "libcschedule.firebaseapp.com",
+    databaseURL: "https://libcschedule.firebaseio.com",
+    projectId: "libcschedule",
+    storageBucket: "",
+    messagingSenderId: "12961768050"
+  };
+  firebase.initializeApp(config);
+</script>
+
 <dom-module id="lc-app">
 	<template>
 		<style>
