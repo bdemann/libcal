@@ -1,11 +1,84 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
-<dom-module id="lc-app">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../lc-icon-tray/lc-icon-tray.html">
+<link rel="import" href="../../bower_components/paper-time-input/paper-time-input.html">
+
+<dom-module id="lc-form">
 	<template>
 		<style>
-
+		#infoBox {
+			width: 700px;
+			grid-column-start: 2;
+			grid-row-start: 2;
+			background-color: white;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			border-radius: 2px;
+			padding: 25px;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(5, 1fr);
+		}
+		#infoBoxBackground {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			width: 100%;
+			height: 100%;
+			background-image: url("../../images/black.png");
+			display: grid;
+			grid-template-columns: 1fr 750px 1fr;
+			grid-template-rows: 1fr 500px 1fr;
+		}
+		#titleInput {
+			width: 100%;
+		}
+		#notesInput {
+			width: 100%;
+		}
+		#saveButton {
+			background: #FF9B19;
+		}
+		#cancelButton {
+			background: gray;
+		}
+		#times {
+			display: grid;
+			grid-template-columns: 1fr 1fr 2fr;
+			grid-template-rows: 1fr;
+		}
+		#buttons {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+		}
+		.button {
+			height: 60px;
+		}
 		</style>
-<paper-button raised on-click="editSchedule" id='edit_s_button'> Edit Your Schedule</paper-button>
+		<div id="infoBoxBackground">
+			<div id="infoBox">
+				<lc-icon-tray on-set-mode="setMode"></lc-icon-tray>
+				<paper-input id="titleInput" label="Title"></paper-input>
+				<div id="times">
+					<div>
+						<paper-time-input label="Start Time"></paper-time-input>
+					</div>
+					<div>
+						<paper-time-input label="End Time"></paper-time-input>
+					</div>
+				</div>
+				<paper-input id="notesInput" label="Notes"></paper-input>
+				<div id="buttons">
+					<paper-button class="button" id="cancelButton" raised on-click="cancel">Cancel</paper-button>
+					<paper-button class="button" id="saveButton" raised on-click="save">Save</paper-button>
+				</div>
+			</div>
+		</div>
 	</template>
-	<script src="lc-app.ts"></script>
+	<script src="lc-form.ts"></script>
 </dom-module>
