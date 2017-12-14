@@ -19,17 +19,14 @@ class LCBody extends Polymer.Element {
 	}
 
 	saveEvent (event) {
-		console.log('we saved the thing');
 		this.hideForm = true;
 	}
 
 	cancelEvent (event) {
-		console.log('we canceled the thing');
 		this.hideForm = true;
 	}
 
 	updateMode (event) {
-		console.log('here is an update to the thing');
 		this.color = event.detail;
 	}
 }

@@ -2,12 +2,10 @@ class LCIconTray extends Polymer.Element {
 	static get is(){ return 'lc-icon-tray'; }
 
 	getP1Style() {
-		console.log("get p1 style")
 		return this.selected === 0 ? 'background-color: #A9C66D' : 'background-color: white';
 	}
 
 	getP2Style() {
-		console.log(this.selected);
 		return this.selected === 1 ? 'background-color: #ffc74f' : 'background-color: white';
 	}
 
@@ -69,8 +67,7 @@ class LCIconTray extends Polymer.Element {
 			}
 			hitButton = true;
 		}
-		// this.shadowRoot.querySelector('#' + button).style.backgroundColor = this.color;
-
+		
 		const setModeEvent = new CustomEvent('set-mode', { detail: this.color });
 		this.dispatchEvent(setModeEvent);
 	}

@@ -15,7 +15,7 @@
 			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 			grid-template-columns: repeat(4, 150px);
 		}
-		.calIcon {
+		.icon {
 			text-align: center;
 			cursor: pointer;
 			padding: 8px 0;
@@ -28,10 +28,10 @@
 		</style>
 		<div id="iconTrayWrapper">
 			<div id="iconTray">
-				<div id="p1" class="calIcon" on-click="setMode" style$="[[p1Style]]"><iron-icon icon="icons:work"></iron-icon></br>Preferred</div>
-				<div id="p2" class="calIcon" on-click="setMode" style$="[[p2Style]]"><iron-icon icon="icons:weekend"></iron-icon></br>Not Preferred</div>
-				<div id="course" class="calIcon" on-click="setMode" style$="[[couresStyle]]"><iron-icon icon="maps:store-mall-directory"></iron-icon></br>Class</div>
-				<div id="other" class="calIcon" on-click="setMode" style$="[[otherStyle]]"><iron-icon icon="notification:do-not-disturb"></iron-icon></br>Unavailable</div>
+				<div id="p1" class="icon" on-click="setMode" style$="[[p1Style]]"><iron-icon icon="icons:work"></iron-icon></br>Preferred</div>
+				<div id="p2" class="icon" on-click="setMode" style$="[[p2Style]]"><iron-icon icon="icons:weekend"></iron-icon></br>Not Preferred</div>
+				<div id="course" class="icon" on-click="setMode" style$="[[courseStyle]]"><iron-icon icon="maps:store-mall-directory"></iron-icon></br>Class</div>
+				<div id="other" class="icon" on-click="setMode" style$="[[otherStyle]]"><iron-icon icon="notification:do-not-disturb"></iron-icon></br>Unavailable</div>
 			</div>
 		</div>
 	</template>

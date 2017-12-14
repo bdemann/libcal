@@ -3,7 +3,6 @@ class LCLogin extends Polymer.Element {
 
 	constructor () {
 		super();
-		console.log('lc-login was created');
 	}
 
 	login() {

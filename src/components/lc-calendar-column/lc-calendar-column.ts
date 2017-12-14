@@ -27,10 +27,7 @@ class LCCalendarColumn extends Polymer.Element {
 			// console.log(document);
 		});
 	}
-
-	report () {
-		console.log('we are hovering over the thing')
-	}
+	
 }
 
 window.customElements.define(LCCalendarColumn.is, LCCalendarColumn)

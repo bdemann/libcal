@@ -3,7 +3,6 @@ class LCForm extends Polymer.Element {
 
 	constructor () {
 		super();
-		console.log('lc-form was created');
 		this.attachShadow({mode: 'open'});
 	}
 
