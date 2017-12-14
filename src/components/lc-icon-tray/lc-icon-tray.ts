@@ -1,9 +1,9 @@
 class LCIconTray extends Polymer.Element {
 	static get is(){ return 'lc-icon-tray'; }
 
-	getP1Style(selected) {
+	getP1Style() {
 		console.log("get p1 style")
-		return selected === 0 ? 'background-color: #A9C66D' : 'background-color: white';
+		return this.selected === 0 ? 'background-color: #A9C66D' : 'background-color: white';
 	}
 
 	getP2Style() {
@@ -28,20 +28,19 @@ class LCIconTray extends Polymer.Element {
 				computed: 'getP2Style(selected)'
 			},
 			courseStyle: {
-				computed: 'getP2Style(selected)'
+				computed: 'getCourseStyle(selected)'
 			},
 			otherStyle: {
-				computed: 'getP2Style(selected)'
+				computed: 'getOtherStyle(selected)'
 			}
 		}
 	}
 
 	constructor () {
 		super();
+		this.selected = 0;
 		this.color = '#A9C66D';
 		this.attachShadow({mode: 'open'});
-		this.firstColored = true;
-		this.secondColored = false;
 	}
 
 	connectedCallback () {
@@ -51,30 +50,29 @@ class LCIconTray extends Polymer.Element {
 	}
 
 	setMode (event) {
-
-		// var hitButton = false;
-		// i = 0;
-		// while (!hitButton){
-		// 	var button = event.path[i].id;
-		// 	if (button == 'p1') {
-		// 		this.color = '#A9C66D';
-		// 	} else if (button == 'p2'){
-		// 		this.color = '#ffc74f';
-		// 	} else if (button == 'course') {
-		// 		this.color = '#4286f4';
-		// 	} else if (button == 'other') {
-		// 		this.color = '#fc5358';
-		// 	} else {
-		// 		i++;
-		// 		hitButton = false;
-		// 		continue;
-		// 	}
-		// 	hitButton = true;
-		// }
+		var hitButton = false;
+		var i = 0;
+		while (!hitButton){
+			var button = event.path[i].id;
+			if (button == 'p1') {
+				this.selected = 0;
+			} else if (button == 'p2'){
+				this.selected = 1;
+			} else if (button == 'course') {
+				this.selected = 2;
+			} else if (button == 'other') {
+				this.selected = 3;
+			} else {
+				i++;
+				hitButton = false;
+				continue;
+			}
+			hitButton = true;
+		}
 		// this.shadowRoot.querySelector('#' + button).style.backgroundColor = this.color;
-        //
-		// const setModeEvent = new CustomEvent('set-mode', { detail: this.color });
-		// this.dispatchEvent(setModeEvent);
+
+		const setModeEvent = new CustomEvent('set-mode', { detail: this.color });
+		this.dispatchEvent(setModeEvent);
 	}
 
 }
