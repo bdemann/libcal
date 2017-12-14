@@ -3,8 +3,7 @@ class LCBody extends Polymer.Element {
 
 	constructor() {
 		super();
-		this.selectedIndex = 0;
-		this.color = '#A9C66D';
+		this.colors = ['#a9c66d', '#ffc74f', '#4286f4', '#fc5358'];
 		this.attachShadow({mode: 'open'});
 		this.hideForm = true;
 	}
@@ -14,12 +13,16 @@ class LCBody extends Polymer.Element {
 		const cell = event.path[0];
 		if(cell.className.includes('block')){
 			this.hideForm = false;
-			event.path[0].style.background = this.color;
+			this.action = {
+				type: 'cellSelected',
+				selectedCell: event.path[0]
+			};
 		}
 	}
 
 	saveEvent (event) {
 		this.hideForm = true;
+		this.selectedCell.style.backgroundColor = this.colors[this.selectedMode];
 	}
 
 	cancelEvent (event) {
@@ -28,6 +31,11 @@ class LCBody extends Polymer.Element {
 
 	updateMode (event) {
 		this.color = event.detail;
+	}
+
+	stateChange (event) {
+		this.selectedMode = event.detail.state.selectedMode;
+		this.selectedCell = event.detail.state.selectedCell;
 	}
 }
 

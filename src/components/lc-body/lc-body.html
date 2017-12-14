@@ -33,6 +33,7 @@
 			padding-bottom: 15px;
 		}
 		</style>
+		<redux-store action="[[action]]" on-statechange="stateChange"></redux-store>
 		<lc-form hidden$="[[hideForm]]" id="form" on-event-saved="saveEvent" on-event-canceled="cancelEvent"></lc-form>
 		<div id="calContainer">
 			<lc-icon-tray on-set-mode="updateMode"></lc-icon-tray>

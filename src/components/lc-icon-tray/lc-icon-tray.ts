@@ -50,16 +50,17 @@ class LCIconTray extends Polymer.Element {
 	setMode (event) {
 		var hitButton = false;
 		var i = 0;
+		var selected;
 		while (!hitButton){
 			var button = event.path[i].id;
 			if (button == 'p1') {
-				this.selected = 0;
+				selected = 0;
 			} else if (button == 'p2'){
-				this.selected = 1;
+				selected = 1;
 			} else if (button == 'course') {
-				this.selected = 2;
+				selected = 2;
 			} else if (button == 'other') {
-				this.selected = 3;
+				selected = 3;
 			} else {
 				i++;
 				hitButton = false;
@@ -67,9 +68,18 @@ class LCIconTray extends Polymer.Element {
 			}
 			hitButton = true;
 		}
-		
-		const setModeEvent = new CustomEvent('set-mode', { detail: this.color });
-		this.dispatchEvent(setModeEvent);
+
+		this.action = {
+			type: 'changeSelectedMode',
+			newMode: selected
+		};
+
+		// const setModeEvent = new CustomEvent('set-mode', { detail: this.color });
+		// this.dispatchEvent(setModeEvent);
+	}
+
+	stateChange (event) {
+		this.selected = event.detail.state.selectedMode;
 	}
 
 }

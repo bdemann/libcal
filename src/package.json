@@ -16,7 +16,9 @@
     "url": "https://github.com/bdemann/libcal/issues"
   },
   "homepage": "https://github.com/bdemann/libcal#readme",
-  "dependencies": {},
+  "dependencies": {
+    "redux-store-element": "^1.2.13"
+  },
   "devDependencies": {
     "zwitterion": "^0.17.0"
   }
