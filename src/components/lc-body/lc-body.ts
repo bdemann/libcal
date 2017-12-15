@@ -6,6 +6,7 @@ class LCBody extends Polymer.Element {
 		this.colors = ['#a9c66d', '#ffc74f', '#4286f4', '#fc5358'];
 		this.attachShadow({mode: 'open'});
 		this.hideForm = true;
+		this.calendar = []
 	}
 
 	addTime (event) {
@@ -13,10 +14,47 @@ class LCBody extends Polymer.Element {
 		const cell = event.path[0];
 		if(cell.className.includes('block')){
 			this.hideForm = false;
+			console.log(event.path);
 			this.action = {
 				type: 'cellSelected',
-				selectedCell: event.path[0]
+				selectedCell: event.path[0],
+				currentDay: event.path[3].id,
+				currentHour: this.hourToInt(event.path[0].id) - 1
 			};
+			console.log(this.action);
+		}
+	}
+
+	hourToInt (hour) {
+		switch (hour) {
+			case 'one':
+				return 1;
+			case 'two':
+				return 2;
+			case 'three':
+				return 3;
+			case 'four':
+				return 4;
+			case 'five':
+				return 5;
+			case 'four':
+				return 6;
+			case 'seven':
+				return 7:
+			case 'eight':
+				return 8;
+			case 'nine':
+				return 9;
+			case 'ten':
+				return 10;
+			case 'eleven':
+				return 11;
+			case 'twelve':
+				return 12;
+			case 'thirteen':
+				return 13;
+			default:
+				return 11;
 		}
 	}
 

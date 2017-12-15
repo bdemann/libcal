@@ -1,6 +1,6 @@
 const State = {
 	user: 'bdemann',
-	selectedMode: 0
+	selectedMode: 0,
 };
 
 export const RootReducer = (state=State, action) => {
@@ -14,7 +14,9 @@ export const RootReducer = (state=State, action) => {
 		case 'cellSelected': {
 			return {
 				...state,
-				selectedCell: action.selectedCell
+				selectedCell: action.selectedCell,
+				currentDay: action.currentDay,
+				currentHour: action.currentHour
 			}
 		}
 		default: {

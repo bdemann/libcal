@@ -48,7 +48,7 @@
 		}
 		#times {
 			display: grid;
-			grid-template-columns: 1fr 1fr 2fr;
+			grid-template-columns: 2fr 1fr 1fr;
 			grid-template-rows: 1fr;
 		}
 		#buttons {
@@ -60,16 +60,28 @@
 			height: 60px;
 		}
 		</style>
+		<redux-store action="[[action]]" on-statechange="stateChange"></redux-store>
 		<div id="infoBoxBackground">
 			<div id="infoBox">
 				<lc-icon-tray on-set-mode="setMode"></lc-icon-tray>
 				<paper-input id="titleInput" label="Title"></paper-input>
 				<div id="times">
 					<div>
-						<paper-time-input label="Start Time"></paper-time-input>
+						<paper-dropdown-menu label="Day">
+							<paper-listbox slot="dropdown-content" selected="[[currentDayIndex]]">
+								<dom-repeat items="[[days]]">
+									<template>
+										<paper-item>[[item]]</paper-item>
+									</template>
+								</dom-repeat>
+							</paper-listbox>
+						</paper-dropdown-menu >
 					</div>
 					<div>
-						<paper-time-input label="End Time"></paper-time-input>
+						<paper-time-input hour="[[startHour]]" min="[[startMin]]" label="Start Time"></paper-time-input>
+					</div>
+					<div>
+						<paper-time-input hour="[[endHour]]" min="[[endMin]]" label="End Time"></paper-time-input>
 					</div>
 				</div>
 				<paper-input id="notesInput" label="Notes"></paper-input>
