@@ -4,7 +4,7 @@ class LCApp extends Polymer.Element {
 
 	constructor () {
 		super();
-		this.selectedPage = 1;
+		this.selectedPage = 0;
 		this.attachShadow({mode: 'open'});
 		this.rootReducer = RootReducer;
 	}
