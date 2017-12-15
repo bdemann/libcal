@@ -6,6 +6,79 @@ class LCCalendarColumn extends Polymer.Element {
 		// console.log('we created a calender column');
 		// console.log(document);
 		this.attachShadow({mode: 'open'});
+		this.renderInfo = [];
+	}
+
+	getColor(index) {
+		var color = ['#A9C66D', '#ffc74f', '#4286f4', '#fc5358']
+		return color[index];
+	}
+
+	intToHour (hour) {
+		switch (hour) {
+			case 1:
+				return 'one';
+			case 2:
+				return 'two';
+			case 3:
+				return 'three';
+			case 4:
+				return 'four';
+			case 5:
+				return 'five';
+			case 6:
+				return 'six';
+			case 7:
+				return 'seven':
+			case 8:
+				return 'eight';
+			case 9:
+				return 'nine';
+			case 10:
+				return 'ten';
+			case 11:
+				return 'eleven';
+			case 12:
+				return 'twelve';
+			case 13:
+				return 'thirteen';
+			case 14:
+				return 'fourteen';
+			case 15:
+				return 'fifteen';
+			case 16:
+				return 'sixteen';
+			case 17:
+				return 'seventeen';
+			default:
+				return 18;
+		}
+	}
+
+	renderEvents () {
+		this.renderInfo.forEach((element)=>{
+			const timeLen = element.endTime - element.startTime;
+			console.log('this is the timeLen');
+			console.log(timeLen);
+			const color = this.getColor(element.mode);
+			const title = element.title;
+			const startTime = element.startTime;
+			console.log('this is the startTime');
+			console.log(startTime);
+			var i = 0;
+			for(i = 0; i < timeLen; i++){
+				const block = this.shadowRoot.querySelector('#' + this.intToHour(startTime + 1 + i));
+				block.style.backgroundColor = color;
+			}
+		});
+	}
+
+	static get properties() {
+		return {
+			renderInfo: {
+				observer: 'renderEvents'
+			}
+		}
 	}
 
 	connectedCallback() {
@@ -27,7 +100,7 @@ class LCCalendarColumn extends Polymer.Element {
 			// console.log(document);
 		});
 	}
-	
+
 }
 
 window.customElements.define(LCCalendarColumn.is, LCCalendarColumn)

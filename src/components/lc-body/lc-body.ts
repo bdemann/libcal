@@ -6,7 +6,12 @@ class LCBody extends Polymer.Element {
 		this.colors = ['#a9c66d', '#ffc74f', '#4286f4', '#fc5358'];
 		this.attachShadow({mode: 'open'});
 		this.hideForm = true;
-		this.calendar = []
+		this.mondayEvents = [];
+		this.tuesdayEvents = [];
+		this.wednesdayEvents = [];
+		this.thursdayEvents = [];
+		this.fridayEvents = [];
+		this.saturdayEvents = [];
 	}
 
 	addTime (event) {
@@ -17,7 +22,6 @@ class LCBody extends Polymer.Element {
 			console.log(event.path);
 			this.action = {
 				type: 'cellSelected',
-				selectedCell: event.path[0],
 				currentDay: event.path[3].id,
 				currentHour: this.hourToInt(event.path[0].id) - 1
 			};
@@ -53,14 +57,22 @@ class LCBody extends Polymer.Element {
 				return 12;
 			case 'thirteen':
 				return 13;
+			case 'fourteen':
+				return 14;
+			case 'fifteen':
+				return 15;
+			case 'sixteen':
+				return 16;
+			case 'seventeen':
+				return 17;
 			default:
-				return 11;
+				return 18;
 		}
 	}
 
 	saveEvent (event) {
 		this.hideForm = true;
-		this.selectedCell.style.backgroundColor = this.colors[this.selectedMode];
+		// this.selectedCell.style.backgroundColor = this.colors[this.selectedMode];
 	}
 
 	cancelEvent (event) {
@@ -71,9 +83,42 @@ class LCBody extends Polymer.Element {
 		this.color = event.detail;
 	}
 
+	renderEvent(event) {
+		console.log('this is the day from the event');
+		console.log(event);
+		switch (event.day) {
+			case 0:
+				this.mondayEvents = [...this.mondayEvents, event];
+				break;
+			case 1:
+				this.tuesdayEvents = [...this.tuesdayEvents, event];
+				console.log('here are the tuesdayEvents');
+				console.log(this.tuesdayEvents);
+				break;
+			case 2:
+				this.wednesdayEvents = [...this.wednesdayEvents, event];
+				break;
+			case 3:
+				this.thursdayEvents = [...this.thursdayEvents, event];
+				break;
+			case 4:
+				this.fridayEvents = [...this.fridayEvents, event];
+				break;
+			case 5:
+				this.saturdayEvents = [...this.saturdayEvents, event];
+				break;
+			default:
+				console.log('We didn\'t register this event with any day');
+				break;
+		}
+	}
+
 	stateChange (event) {
 		this.selectedMode = event.detail.state.selectedMode;
-		this.selectedCell = event.detail.state.selectedCell;
+		this.events = event.detail.state.events;
+		this.events.forEach((element)=> {
+			this.renderEvent(element);
+		});
 	}
 }
 

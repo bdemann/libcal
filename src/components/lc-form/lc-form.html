@@ -59,16 +59,22 @@
 		.button {
 			height: 60px;
 		}
+		.timeItem {
+			width: 150px;
+		}
+		paper-listbox {
+			overflow-x: hidden;
+		}
 		</style>
 		<redux-store action="[[action]]" on-statechange="stateChange"></redux-store>
 		<div id="infoBoxBackground">
 			<div id="infoBox">
-				<lc-icon-tray on-set-mode="setMode"></lc-icon-tray>
+				<lc-icon-tray id="icons" on-set-mode="setMode"></lc-icon-tray>
 				<paper-input id="titleInput" label="Title"></paper-input>
 				<div id="times">
 					<div>
 						<paper-dropdown-menu label="Day">
-							<paper-listbox slot="dropdown-content" selected="[[currentDayIndex]]">
+							<paper-listbox id="daylist" slot="dropdown-content" selected="[[currentDayIndex]]">
 								<dom-repeat items="[[days]]">
 									<template>
 										<paper-item>[[item]]</paper-item>
@@ -78,10 +84,28 @@
 						</paper-dropdown-menu >
 					</div>
 					<div>
-						<paper-time-input hour="[[startHour]]" min="[[startMin]]" label="Start Time"></paper-time-input>
+						<paper-dropdown-menu label="Start Time">
+							<paper-listbox id="startTime" slot="dropdown-content" selected="[[selectedStartTime]]">
+								<dom-repeat items="[[times]]">
+									<template>
+										<paper-item class="timeItem">[[item]]</paper-item>
+									</template>
+								</dom-repeat>
+							</paper-listbox>
+						</paper-dropdown-menu >
+						<!-- <paper-time-input id="startTime" hour="[[startHour]]" min="[[startMin]]" label="Start Time"></paper-time-input> -->
 					</div>
 					<div>
-						<paper-time-input hour="[[endHour]]" min="[[endMin]]" label="End Time"></paper-time-input>
+						<paper-dropdown-menu label="End Time">
+							<paper-listbox id="endTime" slot="dropdown-content" selected="[[selectedEndTime]]">
+								<dom-repeat items="[[times]]">
+									<template>
+										<paper-item class="timeItem">[[item]]</paper-item>
+									</template>
+								</dom-repeat>
+							</paper-listbox>
+						</paper-dropdown-menu >
+						<!-- <paper-time-input id="endTime" hour="[[endHour]]" min="[[endMin]]" label="End Time"></paper-time-input> -->
 					</div>
 				</div>
 				<paper-input id="notesInput" label="Notes"></paper-input>
